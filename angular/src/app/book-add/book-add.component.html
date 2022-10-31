@@ -1,0 +1,55 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+<div style="text-align: center">
+    <h1>{{message}}</h1>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <form>
+                <fieldset>
+                
+                    <div class="form-group">
+                        <label for="Name"><span class="req">* </span> Name: <small></small> </label>
+                        <input required type="text"  name="name" id="name"
+                            class="form-control phone" maxlength="28" placeholder="Enter book name" [(ngModel)]="book.name" />
+                    </div>
+
+                    <div class="form-group">
+                        <label for="author"><span class="req">* </span> Author Name: </label>
+                        <input class="form-control" type="text"  name="email" id="txt" required
+                            placeholder="Enter author name" [(ngModel)]="book.authorName"/>
+                        <div id="errFirst"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pubdate"><span class="req">* </span> Publication Date : </label>
+                        <input class="form-control" type="text"  name="address" id="txt"
+                            placeholder="Enter publication date (YYYY-MM-DD)" required [(ngModel)]="book.publicationDate"/>
+                        <div id="errLast"></div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="copies"><span class="req">* </span> Copies: </label>
+                        <input class="form-control" type="text"  name="address" id="txt"
+                            placeholder="Enter number of copies" required [(ngModel)]="book.copies"/>
+                        <div id="errLast"></div>
+                    </div>
+                
+                    <div class="form-group">
+                        <input class="btn btn-success" type="submit" name="submit_reg" value="Add book" (click)="addBook()">
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+    <br>
+
+    <div>
+        <button class="btn" style="color:blue; background-color: blanchedalmond;" (click)="searchBook()">Search Book</button>
+    </div>
+</div>
